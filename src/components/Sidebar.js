@@ -8,23 +8,25 @@ export default function Sidebar() {
       {value => {
         const { links, sidebarOpen, handleSidebar } = value;
         return (
-          <SideWrapper show={sidebarOpen}>
-            <ul>
-              {links.map(link => {
-                return (
-                  <li key={link.id}>
-                    <Link
-                      to={link.path}
-                      className="sidebar-link"
-                      onClick={handleSidebar}
-                    >
-                      {link.text}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </SideWrapper>
+          <div>
+            <SideWrapper show={sidebarOpen}>
+              <ul>
+                {links.map(link => {
+                  return (
+                    <li key={link.id}>
+                      <Link
+                        to={link.path}
+                        className="sidebar-link"
+                        onClick={handleSidebar}
+                      >
+                        {link.text}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </SideWrapper>
+          </div>
         );
       }}
     </ProductConsumer>
