@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
 export default function Sidebar() {
@@ -8,25 +8,25 @@ export default function Sidebar() {
       {value => {
         const { links, sidebarOpen, handleSidebar } = value;
         return (
-          <div>
-            <SideWrapper show={sidebarOpen}>
-              <ul>
-                {links.map(link => {
-                  return (
-                    <li key={link.id}>
-                      <Link
-                        to={link.path}
-                        className="sidebar-link"
-                        onClick={handleSidebar}
-                      >
-                        {link.text}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </SideWrapper>
-          </div>
+
+          <SideWrapper show={sidebarOpen}>
+            <ul>
+              {links.map(link => {
+                return (
+                  <li key={link.id}>
+                    <Link
+                      to={link.path}
+                      className="sidebar-link"
+                      onClick={handleSidebar}
+                    >
+                      {link.text}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </SideWrapper>
+
         );
       }}
     </ProductConsumer>
@@ -41,8 +41,8 @@ const SideWrapper = styled.nav`
   height: 100%;
   background: var(--mainGrey);
   z-index: 1;
-  border-right: 4px solid var(--primaryColor);
-  transition: var(--mainTrasitions);
+  border-right: 4px solid var(--primary-color);
+  transition: all 0.03s ease-in-out;
   transform: ${props => (props.show ? "translateX(0)" : "translateX(-100%)")};
   ul {
     list-style-type: none;
@@ -55,7 +55,7 @@ const SideWrapper = styled.nav`
     color: var(--mainBlack);
     padding: 0.5rem 1.5rem;
     background: transparent;
-    transition: var(--mainTrasition);
+    transition: all 0.03s ease-in-out;
   }
   .sidebar-link:hover {
     background: var(--primary-color);

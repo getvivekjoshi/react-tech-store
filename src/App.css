@@ -2,12 +2,12 @@
 
 :root{
   --primary-color:#5fb7ea;
-  --primaryRGBA:rgba(0,0,0,0.3);
+  --primaryRGBA:rgba(0, 0, 0, 0.3);
   --mainGrey:#fafafa;
   --darkgrey:#5f5e5e;
   --mainWhite:#fff;
   --mainBlack:#222;
-  --mainTrasition:all 0.03s ease-in-out;
+  --mainTransition:all 0.03s ease-in-out;
   --mainSpacing:0.3rem;
 }
 .text-title{
@@ -23,4 +23,23 @@ body{
   font-family: 'Open Sans', sans-serif !important;
   background: var(--mainGrey) !important;
   color:var(--mainGrey);
+}
+
+.main-link{
+  padding:0.5rem 1rem;
+  background: var(--primary-color);
+  color:var(--mainWhite);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  outline:2px solid var(--primary-color);
+  outline-offset: 4px;
+  border:none;
+  transition: var(--mainTransition);
+}
+.main-link:hover{
+background: var(--darkgrey);
+text-decoration: none;
+color:var(--primary-color);
+outline-color:var(--primary-color);
 }
